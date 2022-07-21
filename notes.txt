@@ -1,0 +1,53 @@
+
+de.js v16.13.0.
+Type ".help" for more information.
+> Uint8Array(10);
+Uncaught TypeError: Constructor Uint8Array requires 'new'
+    at Uint8Array (<anonymous>)
+> new Uint8Array(10);
+Uint8Array(10) [
+  0, 0, 0, 0, 0,
+  0, 0, 0, 0, 0
+]
+> let arr = new Uint8Array(10);
+undefined
+> arr[0]++
+0
+> arr[0]--
+1
+> arr[0]--
+0
+> arr
+Uint8Array(10) [
+  255, 0, 0, 0, 0,
+    0, 0, 0, 0, 0
+]
+> let arr = new Uint8ClampedArray(10);
+Uncaught SyntaxError: Identifier 'arr' has already been declared
+> let arr2 = new Uint8ClampedArray(10);
+undefined
+> arr2[0]--
+0
+> arr2[0]--
+0
+> arr2
+Uint8ClampedArray(10) [
+  0, 0, 0, 0, 0,
+  0, 0, 0, 0, 0
+]
+> charCodeAt
+Uncaught ReferenceError: charCodeAt is not defined
+> String.charCodeAt(80);
+Uncaught TypeError: String.charCodeAt is not a function
+> String.charCodeAt(80);
+Uncaught TypeError: String.charCodeAt is not a function
+> 
+> String.fromC
+undefined
+> String.fromCharCode(65);
+'A'
+> [..."Korean"].map(c=>("0000000"+(c.charCodeAt()).toString(2)).slice(-8)).join("").replaceAll("0","o").replaceAll("1","O");
+'oOooOoOOoOOoOOOOoOOOooOooOOooOoOoOOooooOoOOoOOOo'
+> [..."K"].map(c=>("0000000"+(c.charCodeAt()).toString(2)).slice(-8)).join("").replaceAll("0","o").replaceAll("1","O");
+'oOooOoOO'
+
